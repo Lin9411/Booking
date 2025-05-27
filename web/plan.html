@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開始規劃</title>
+    <style>
+        .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 置中對齊 */
+      margin-top: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;font-style: normal;background-color: darksalmon;">想去哪裡?</h1>
+    <p>
+    <div class="form-container">
+    
+
+    <form id="formPlan"></form>
+    <form action="plan.html" method="get">
+        <label for="destination">目的地:</label>
+        <input type="text"placeholder="請輸入內容" id="destination" name="destination" required>
+        <br><br>
+        <label for="start-date">開始日期:</label>
+        <input type="date" id="start-date" name="start-date" required>
+        <br><br>
+        <label for="end-date">結束日期:</label>
+        <input type="date" id="end-date" name="end-date" required>
+        <br><br>
+        <button type="submit">提交</button>
+    </div>
+    <script src="form-submit.js"></script>
+</body>
+</html>

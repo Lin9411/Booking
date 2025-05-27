@@ -1,0 +1,26 @@
+{
+  "name": "booking",
+  "version": "1.0.0",
+  "description": "(需要 旅遊地點資料庫，國家城市表，景點表)\r 先輸入自己的基本資料{名字，自己取帳號名(pk)，年齡}\r 也可以選擇查看自己建立過的旅程\r 然後進去看想要去哪裡\r 會推薦你如果你是輸入一個大範圍(例如:歐洲然後可以隨機給國家的景點{一張表景點名(pk)})\r 輸出推薦地\r 詢問使用者是否只旅遊一個點還是還有其他地方要一起去\r 有的話就繼續規劃然後存在資料庫裡(可以為自己的旅程命名，幾號出發，住哪裡，等等規劃){帳號(pk)，這裡也一張表}\r 沒有的話就存資料庫就好，看可不可以規劃完成之後顯示在螢幕上",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lin9411/Booking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lin9411/Booking/issues"
+  },
+  "homepage": "https://github.com/Lin9411/Booking#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.1.7"
+  }
+}

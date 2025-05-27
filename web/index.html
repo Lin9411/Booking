@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設計你的旅程!</title>
+  <style>
+    button {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    p {
+      text-align: center;
+      font-size: 30px;
+      color: darkslategray;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;background-color: cornflowerblue;">設計你的旅程!</h1>
+  <p style="text-align: center;font-size: 25px;">歡迎來到旅程規劃網站！在這裡，您可以輕鬆地設計和查看您的旅程。</p>
+
+  <button onclick="location.href='plan.html'">開始規劃!</button>
+  <button onclick="location.href='past.html'">查看過去的旅程</button>
+
+  <h2>基本資料</h2>
+  <form id="formIndex">
+    <label for="name">用戶名字:</label>
+    <input type="text" placeholder="請輸入名字" id="name" name="name" required>
+    <br><br>
+    <label for="age">年齡:</label>
+    <input type="number" placeholder="請輸入年齡" id="age" name="age" required>
+    <br><br>
+    <button type="button" onclick="sendData()">送出</button>
+  </form>
+
+  <script>
+    function sendData() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+
+      fetch("http://localhost:3000/addUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name: name, age: age })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message || "資料送出成功！");
+        console.log("回傳資料：", data);
+      })
+      .catch(error => {
+        console.error("發送失敗：", error);
+        alert("發送失敗，請檢查後端有無開啟");
+      });
+    }
+  </script>
+
+  <p>不知道去哪?</p>
+  <button onclick="">地球轉一轉</button>
+</body>
+</html>
+
